@@ -1,14 +1,28 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <h1>ToDo</h1>
+    <New @add="onNew" />
+    <List :initial-items="items" />
   </div>
 </template>
 
 <script>
+import New from './New.vue'
+import List from './List.vue'
+
 export default {
-  data() {
+  components: {
+    New,
+    List
+  },
+  data () {
     return {
-      message: 'Hello world!'
+      items: []
+    }
+  },
+  methods: {
+    onNew (content) {
+      this.items.splice(0, 0, content)
     }
   }
 }
@@ -16,7 +30,7 @@ export default {
 
 <style>
 #app {
-  font-size: 18px;
-  font-family: 'Roboto', sans-serif;
+  width: 95%;
+  margin: 0 auto;
 }
 </style>

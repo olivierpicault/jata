@@ -18,9 +18,9 @@ module.exports = {
     ]
   },
   devServer: {
-    open: true,
     hot: true
   },
+  stats: 'errors-warnings',
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'

@@ -8,5 +8,9 @@
     "extends": [
         "standard",
         "plugin:vue/recommended"
-    ]
+    ],
+    "rules": {
+        "vue/html-closing-bracket-newline": "off",
+        "vue/multiline-html-element-content-newline": "off"
+    }
 }

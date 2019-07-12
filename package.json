@@ -33,6 +33,9 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "vue": "^2.6.10"
   }
 }
