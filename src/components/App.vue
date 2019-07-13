@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>ToDo</h1>
+    <h1>Just Another Todo App</h1>
     <New @add="onNew" />
     <List :initial-items="items" />
   </div>
@@ -28,9 +28,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   width: 95%;
   margin: 0 auto;
+}
+
+h1 {
+  margin: 25px auto;
 }
 </style>

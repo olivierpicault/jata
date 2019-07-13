@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf docs",
     "build": "npm run clean && webpack --config webpack.config.js --mode production",
     "serve": "webpack-dev-server --mode development --progress",
     "test": "jest"
@@ -24,6 +24,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.3",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
     "rimraf": "^2.6.3",
     "vue-loader": "^15.7.0",
     "vue-style-loader": "^4.1.2",

@@ -8,13 +8,13 @@ module.exports = {
   entry: './src/main.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'docs')
   },
   module: {
     rules: [
       { test: /\.vue$/, loader: 'vue-loader' },
       { test: /\.js$/, loader: 'babel-loader' },
-      { test: /\.css$/, use: [ 'vue-style-loader', 'css-loader' ] }
+      { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] }
     ]
   },
   devServer: {
