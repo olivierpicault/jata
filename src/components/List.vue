@@ -2,18 +2,18 @@
   <div class="list">
     <ul class="list-group">
       <li
-        v-for="(item, id) in items"
-        :key="id"
+        v-for="(item, index) in items"
+        :key="item.id"
         class="">
         <div class="card">
           <div class="card-body">
-            {{ item }}
+            {{ item.content }}
           </div>
           <div class="card-footer">
             <a
               href="#"
               class="card-link"
-              @click="remove(id)">Remove</a>
+              @click="remove(index, item.id)">Remove</a>
           </div>
         </div>
       </li>
@@ -35,8 +35,10 @@ export default {
     }
   },
   methods: {
-    remove (id) {
-      this.items.splice(id, 1)
+    remove (index, id) {
+      // Remove task
+      this.items.splice(index, 1)
+      this.$emit('delete', id)
     }
   }
 }

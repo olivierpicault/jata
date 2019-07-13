@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import db from './../js/db'
+
 export default {
   data () {
     return {
@@ -29,8 +31,18 @@ export default {
   methods: {
     add () {
       if (this.content !== undefined && this.content.trim() !== '') {
-        this.$emit('add', this.content)
-        this.content = undefined
+        // Add to db
+        db.collection('tasks').add({
+          content: this.content
+        }).then(doc => {
+          // Fire event
+          this.$emit('add', {
+            id: doc.id,
+            content: this.content
+          })
+          // Reset input
+          this.content = undefined
+        })
       }
     }
   }
