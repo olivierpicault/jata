@@ -31,18 +31,9 @@ export default {
   methods: {
     add () {
       if (this.content !== undefined && this.content.trim() !== '') {
-        // Add to db
-        db.collection('tasks').add({
-          content: this.content
-        }).then(doc => {
-          // Fire event
-          this.$emit('add', {
-            id: doc.id,
-            content: this.content
-          })
-          // Reset input
-          this.content = undefined
-        })
+        this.$store.dispatch('create', { content: this.content })
+        // Reset input
+        this.content = undefined
       }
     }
   }

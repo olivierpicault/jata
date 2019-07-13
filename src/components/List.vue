@@ -2,9 +2,8 @@
   <div class="list">
     <ul class="list-group">
       <li
-        v-for="(item, index) in items"
-        :key="item.id"
-        class="">
+        v-for="item in items"
+        :key="item.id">
         <div class="card">
           <div class="card-body">
             {{ item.content }}
@@ -13,7 +12,7 @@
             <a
               href="#"
               class="card-link"
-              @click="remove(index, item.id)">Remove</a>
+              @click="remove(item.id)">Remove</a>
           </div>
         </div>
       </li>
@@ -23,22 +22,14 @@
 
 <script>
 export default {
-  props: {
-    initialItems: {
-      type: Array,
-      default: () => []
-    }
-  },
-  data () {
-    return {
-      items: this.initialItems
+  computed: {
+    items () {
+      return this.$store.state.todos
     }
   },
   methods: {
-    remove (index, id) {
-      // Remove task
-      this.items.splice(index, 1)
-      this.$emit('delete', id)
+    remove (id) {
+      this.$store.dispatch('delete', id)
     }
   }
 }
