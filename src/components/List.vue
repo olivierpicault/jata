@@ -6,13 +6,18 @@
         :key="item.id">
         <div class="card">
           <div class="card-body">
-            {{ item.content }}
-          </div>
-          <div class="card-footer">
-            <a
-              href="#"
-              class="card-link"
-              @click="remove(item.id)">Remove</a>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-10">
+                  {{ item.content }}
+                </div>
+                <div class="col-1">
+                  <fa
+                    icon="trash"
+                    @click="remove(item.id)" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </li>
@@ -29,7 +34,10 @@ export default {
   },
   methods: {
     remove (id) {
+      // Deletes item from model
+      // Done first so user enjoys the app
       this.$store.commit('delete', id)
+      // Deletes item from database
       this.$store.dispatch('delete', id)
     }
   }
