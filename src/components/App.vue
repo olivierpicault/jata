@@ -1,8 +1,14 @@
 <template>
-  <div id="app">
-    <h1>Just Another Todo App</h1>
-    <New />
-    <List />
+  <div
+    id="app"
+    class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h1>Just Another Todo App</h1>
+        <New />
+        <List />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,5 +35,6 @@ export default {
 
 h1 {
   margin: 25px auto;
+  text-align: center;
 }
 </style>
