@@ -23,8 +23,8 @@ const actions = {
       })
     context.commit('setTodos', todos)
   },
-  async delete (context, id) {
-    await db.collection('todos')
+  delete (context, id) {
+    db.collection('todos')
       .doc(id)
       .delete()
   }
