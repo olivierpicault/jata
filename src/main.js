@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-// Font awesome imports
+// Font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -15,12 +15,9 @@ import store from './js/store'
 library.add(faTrash)
 Vue.component('fa', FontAwesomeIcon)
 
-/*
-**  App
-*/
-
 Vue.config.productionTip = false
 
+// App
 new Vue({
   store,
   render: h => h(App)

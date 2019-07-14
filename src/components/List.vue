@@ -14,6 +14,7 @@
                 <div class="col-1">
                   <fa
                     icon="trash"
+                    class="icon"
                     @click="remove(item.id)" />
                 </div>
               </div>
@@ -52,5 +53,9 @@ export default {
 .list-group > li {
   list-style-type: none;
   margin-bottom: 25px;
+}
+
+.icon:hover {
+  cursor: pointer;
 }
 </style>

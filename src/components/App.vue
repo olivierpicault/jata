@@ -4,7 +4,7 @@
     class="container-fluid">
     <div class="row">
       <div class="col">
-        <h1>Just Another Todo App</h1>
+        <h2>Just Another Todo App</h2>
         <New />
         <List />
       </div>
@@ -33,7 +33,7 @@ export default {
   margin: 0 auto;
 }
 
-h1 {
+h2 {
   margin: 25px auto;
   text-align: center;
 }
