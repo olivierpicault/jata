@@ -27,7 +27,11 @@ export default {
   methods: {
     add () {
       if (this.content !== undefined && this.content.trim() !== '') {
-        this.$store.dispatch('create', { content: this.content })
+        const todo = { content: this.content }
+        // Add the item to the todo list
+        this.$store.commit('add', todo)
+        // Add it to the storage
+        this.$store.dispatch('create', todo)
         // Reset input
         this.content = undefined
       }

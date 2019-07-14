@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     remove (id) {
+      this.$store.commit('delete', id)
       this.$store.dispatch('delete', id)
     }
   }

@@ -11,7 +11,7 @@ const actions = {
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
-          todos.push({
+          todos.splice(0, 0, {
             id: doc.id,
             content: doc.data().content
           })
@@ -23,7 +23,6 @@ const actions = {
     await db.collection('todos')
       .doc(id)
       .delete()
-    context.dispatch('read')
   }
 }
 
