@@ -55,6 +55,10 @@ export default {
   margin-bottom: 25px;
 }
 
+.card-body {
+  padding: 10px;
+}
+
 .icon:hover {
   cursor: pointer;
 }
